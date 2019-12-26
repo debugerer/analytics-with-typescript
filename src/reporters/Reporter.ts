@@ -1,3 +1,3 @@
-export interface Report {
+export interface Reporter {
     print(report: string): void;
 }
