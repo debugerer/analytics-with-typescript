@@ -1,4 +1,4 @@
 export interface DataReader {
     data: string[][];
-    read(): void;
+    read(): DataReader;
 }

@@ -1,4 +1,4 @@
-import { Match } from './Match';
+import { Match } from '../Match';
 
 export interface Analyzer {
     run(matches: Match[]): string;

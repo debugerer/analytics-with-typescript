@@ -11,12 +11,12 @@ export class MatchReader {
         return this._matches;
     }
 
-    public constructor(reader: DataReader) {
-        this._reader = reader;
+    static fromCsv(filename: string): MatchReader {
+        return new MatchReader(new CsvFileReader(filename));
     }
 
-    public load(): void {
-        this._reader.read();
+    public constructor(reader: DataReader) {
+        this._reader = reader.read();
         this._matches = this._reader.data.map(fields => new Match(fields));
     }
 }

@@ -13,9 +13,10 @@ export class CsvFileReader implements DataReader {
         this._filename = filename;
     }
 
-    public read(): void {
+    public read(): CsvFileReader {
         this._data = fs.readFileSync(this._filename, {
             encoding: 'utf-8'
         }).split('\n').map(row => row.split(','));
+        return this;
     }
 }
